@@ -1,0 +1,201 @@
+/* koy-them.css - Bootstrap Dark Mode Extension */
+
+:root {
+    --theme-color-primary: #fd0d99;
+    --theme-color-primary-hover: #8be800f8;
+    --theme-color-secondary: #6c757d;
+    --theme-color-success: #198754;
+    --theme-color-success-hover: #146c43;
+    --theme-color-danger: #df0016;
+    --theme-color-danger-hover: #b30012;
+    --theme-bg-body: #ffffff;
+    --theme-bg-card: #ffffff;
+    --theme-text-body: #212529;
+    --theme-text-link: var(--theme-color-primary);
+    --theme-text-link-hover: var(--theme-color-primary-hover);
+    --theme-border-radius: 0.95rem;
+    --theme-border-width: 1px;
+    --scrollbar-track-bg: var(--theme-bg-card);
+    --scrollbar-thumb-bg: var(--theme-color-primary);
+    --scrollbar-thumb-hover-bg: var(--theme-color-primary-hover);
+}
+
+body.dark-mode {
+    --theme-bg-body: #121212;
+    --theme-bg-card: #1e1e1e;
+    --theme-text-body: #e0e0e0;
+    --theme-text-link: #bb86fc;
+    --theme-text-link-hover: #9a66e0;
+    --theme-color-primary: #bb86fc;
+    --theme-color-primary-hover: #9a66e0;
+    --theme-color-danger: #cf6679;
+    --theme-color-success: #03dac6;
+    --theme-color-success-hover: #018786;
+    --theme-card-shadow: rgba(255, 255, 255, 0.1);
+    --scrollbar-track-bg: #2a2a2a;
+    --scrollbar-thumb-bg: #bb86fc;
+    --scrollbar-thumb-hover-bg: #9a66e0;
+}
+
+body {
+    background-color: var(--theme-bg-body);
+    color: var(--theme-text-body);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: var(--theme-text-link);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--theme-text-link-hover);
+}
+
+/* Override Bootstrap Components */
+.btn {
+    border-radius: var(--theme-border-radius);
+    border-width: var(--theme-border-width);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+
+.btn-primary {
+    background-color: var(--theme-color-primary);
+    border-color: var(--theme-color-primary);
+    color: var(--theme-bg-body);
+}
+
+.bg-primary {
+    background-color: var(--theme-color-primary) !important;
+    color: var(--theme-bg-body) !important;
+    /* Text color contrasting with bg */
+    transition: background-color 0.3s ease, color 0.3s ease; }
+
+
+.btn-primary:hover {
+    background-color: var(--theme-color-primary-hover);
+    border-color: var(--theme-color-primary-hover);
+}
+
+.btn-success {
+    background-color: var(--theme-color-success);
+    border-color: var(--theme-color-success);
+    color: var(--theme-bg-body);
+}
+
+.btn-success:hover {
+    background-color: var(--theme-color-success-hover);
+    border-color: var(--theme-color-success-hover);
+}
+
+.btn-danger {
+    background-color: var(--theme-color-danger);
+    border-color: var(--theme-color-danger);
+    color: var(--theme-bg-body);
+}
+
+.btn-danger:hover {
+    background-color: var(--theme-color-danger-hover);
+    border-color: var(--theme-color-danger-hover);
+}
+
+.card {
+    background-color: var(--theme-bg-card);
+    color: var(--theme-text-body);
+    box-shadow: 0 0.125rem 0.25rem var(--theme-card-shadow, rgba(0, 0, 0, 0.1));
+    border-radius: var(--theme-border-radius);
+    transition: all 0.3s ease;
+}
+
+.table {
+    color: var(--theme-text-body);
+    background-color: var(--theme-bg-card);
+}
+
+.table thead th {
+    color: var(--theme-text-link);
+}
+
+.form-control {
+    background-color: var(--theme-bg-card);
+    color: var(--theme-text-body);
+    border: 1px solid var(--theme-text-body);
+    border-radius: var(--theme-border-radius);
+}
+
+.form-control:focus {
+    border-color: var(--theme-color-primary);
+    box-shadow: 0 0 0 0.2rem var(--theme-color-primary-hover);
+    background-color: var(--theme-bg-card);
+    color: var(--theme-text-body);
+}
+
+.navbar,
+.dropdown-menu {
+    background-color: var(--theme-bg-card);
+    color: var(--theme-text-body);
+}
+
+.navbar a,
+.dropdown-item {
+    color: var(--theme-text-body);
+}
+
+.navbar a:hover,
+.dropdown-item:hover {
+    color: var(--theme-text-link);
+}
+
+.bg-light {
+    background-color: var(--theme-bg-card) !important;
+    color: var(--theme-text-body) !important;
+}
+
+.bg-light.active {
+    background-color: #007bff!important;
+    /* Bootstrap primary blue */
+    color: white!important;
+ }
+
+.text-theme {
+    color: var(--theme-text-body) !important;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-bg);
+    border-radius: var(--theme-border-radius);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-bg);
+    border-radius: var(--theme-border-radius);
+    border: 3px solid var(--scrollbar-track-bg);
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover-bg);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-bg) var(--scrollbar-track-bg);
+}
+
+
+
+
+
+
+
+
+

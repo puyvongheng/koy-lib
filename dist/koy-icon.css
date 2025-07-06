@@ -1,0 +1,27 @@
+/* Custom button with user icon */
+.btn.icon-user {
+    position: relative;
+    padding-left: 2.5rem;
+    /* space for the icon */
+}
+
+
+
+body.dark-mode .btn.icon-user::before {
+    filter: brightness(0) invert(1);
+}
+
+.btn.icon-user::before {
+    content: "";
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    background-image: url("https://cdn-icons-png.flaticon.com/512/2661/2661440.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
